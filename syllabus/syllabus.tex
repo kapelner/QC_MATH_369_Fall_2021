@@ -6,18 +6,18 @@
 %%edit these!!
 \newcommand{\coursedept}{Math}
 \newcommand{\coursenumber}{369}
-\newcommand{\coursenumbercrosslisted}{/ 690.03~}
+\newcommand{\sixhundredsection}{690.03 }
+\newcommand{\coursenumbercrosslisted}{/ \sixhundredsection}
 \newcommand{\semester}{Fall}
 \newcommand{\numcredits}{3}
 \newcommand{\lectimeandloc}{Tues and Thurs 5 -- 6:15PM / on zoom}
 \newcommand{\requiredlabtimeandloc}{}
 \newcommand{\tataofficehourtimeandloc}{TA / TA Office Hours / Loc & Kennly Weerasinghe / see \coursewebpagelink}
 \newcommand{\numtheoryhws}{6--9}
-\newcommand{\lastdatetimetohandinhomeworks}{May 18 at noon}
+\newcommand{\lastdatetimetohandinhomeworks}{Dec 15 at noon}
 \newcommand{\midtermonedateandlocation}{Thursday, October 7 on zoom during class time}
 \newcommand{\midtermtwodateandlocation}{Thursday, November 11 on zoom during class time}
 \newcommand{\finaldateandlocation}{TBD but on zoom}
-\newcommand{\sixhundredsection}{690.x }
 
 %%%unchanged
 \newcommand{\coursewebpageurl}{https://github.com/kapelner/QC_\coursedept_\coursenumber_\semester_\the\year}
@@ -31,54 +31,9 @@
 
 \section*{Course Overview}
 
-MATH 369 is an introduction to the intermediate concepts of mathematical statistics, statistical inference and theory of experimentation. Main topics are listed below:
+MATH 369 is an introduction to the intermediate concepts of mathematical statistics, statistical inference and theory of experimentation.  Lectures and their topics with time estimates are below:
 
-
-\begin{itemize}
-\itemsep -0.0em 
-\item Estimation
-\begin{itemize}
-\item Data generating processes, parameters, estimators, estimates, samples, population 
-\item Point parameter estimators and estimates: loss, risk, bias-variance decomposition
-\item Likelihood, log-likelihood, score function
-\item Un/biased estimators and asymptotically unbiased estimators, consistent estimator
-\item Method of Moments (MM), Maximum likelihood estimator (MLE)
-\item Cramer-Rao Lower Bound, Fisher information, UMVUEs
-\item Asymptotical normality and efficiency of MLE's, uni/multivariate delta methods
-\item The Empirical CDF estimator
-\item The non-parametric bootstrap
-\end{itemize}
-\item Testing
-\begin{itemize}
-\item Neyman-Pearson paradigm of Hypothesis testing
-\item Left-sided/tailed, right-sided/tailed, two-sided/tailed tests
-\item One proportion z-test, One sample z-test, one sample t-test, two sample z-test (un/equal variances), two sample t-test  (un/equal variances), two-proportion z-test.
-\item Size ($\alpha$), Fisher's $p$-value and \qu{statistical significance}
-\item Statistical power and the power function
-\item Effect sizes and \qu{practical / clinical significance}
-\item uniformly most powerful tests?, equivalence testing?
-\item Wald, score and the generalized likelihood ratio testing procedures
-\item Chi-squared tests for goodness of fit and independence
-\item Kolmogorov-Smirnov's goodness of fit test and distribution equivalence test
-\item Permutation Tests
-\item Multiple testing comparison problem: familywise error control via the Bonferroni, Sidak and Simes procedures, false discovery rate control via the Benjamini-Hochberg procedure
-\item The non-parametric bootstrap
-\end{itemize}
-\item Experimentation and Causality
-\begin{itemize}
-\item Casual inference vs statistical inference
-\item Neyman-Rubin model, the counterfactual
-\item Observational study, confounding variable, biased causal estimation
-\item Experimentation, completely randomized experiment, unbiased causal estimation
-\end{itemize}
-\item Model Selection
-\begin{itemize}
-\item Naive model selection bias based on number of parameters (overfitting)
-\item Model section criterions: AIC, AICC
-\item Akaike weights / scores
-\end{itemize}
-\end{itemize}
-
+\input{_lecture_schedule}
 
 
 \textbf{This is more of a typical mathematics theory course than the rest of the data science series but it is still not like the other math courses you're used to; it will be more philosophical and very high in conceptual density while the mathematics itself is kept deliberately simple.} But we will still attempt to keep our eye on developing ideas and concepts for helping to make decisions in the real world. Thus we may make limited use of computation using the \texttt{R} statistical language.
@@ -106,8 +61,6 @@ MATH 241 (basic probability), 201 (multivariable calculus) and 231 (linear algeb
 \input{../../syllabi/_jewish_holiday_reschedule}
 
 \input{../../syllabi/_zoom_policies}
-
-\input{_lecture_schedule}
 
 %\input{../../syllabi/_lecture_upload}
 
