@@ -43,8 +43,8 @@ My lecture videos can be watched on slack and lecture notes are also scanned in 
 * Homework 5 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw05/hw05.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw05/hw05.pdf) (due 11/9)
 * Homework 4 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw04/hw04.pdf) (due 10/24)
 * Homework 3 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw03/hw03.pdf) (due 10/5)
-* Homework 2 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw02/hw02.pdf) (due 9/22)
-* Homework 1 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw01/hw01.pdf) (due 9/11)-->
+* Homework 2 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw02/hw02.pdf) (due 9/22)-->
+* Homework 1 [(download)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_369_Fall_2021/blob/master/homeworks/hw01/hw01.pdf) (due 9/5)
 
 
 ## Exams
