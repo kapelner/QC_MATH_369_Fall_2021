@@ -6,7 +6,7 @@ ggplot(data.frame(y = probs, x = x)) +
   geom_bar(aes(x = x, y = probs), stat = 'identity') +
   ylab("binomial probability")
 
-ret_prob = sum(probs[7:14])
+ret_prob = sum(probs[7:16])
 ret_prob
 1 - ret_prob
 
