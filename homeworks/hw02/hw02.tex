@@ -7,12 +7,12 @@
 
 
 
-\title{MATH 369/650 Fall \the\year{} Homework \#2 INCOMPLETE}
+\title{MATH 369/650 Fall \the\year{} Homework \#2}
 
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due by email 11:59PM ??, September ??, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due by email 11:59PM, Saturday, October 2, \the\year{} \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -137,10 +137,156 @@ For those of you who are curious, this is a metric used in Bayesian statistics c
 
 \intermediatesubproblem{Find the p-value of our estimate as a function of $\Phi$. Illustrate the p-value in the illustration in (b).}\spc{3}
 
-\easysubproblem{Without computing the p-value explicitly, would it be above or below $\alpha = 2.3\%$? Is the estimate \emph{statistically significant}?}\spc{2}
+\easysubproblem{Without computing the p-value explicitly, would it be above or below $\alpha = 2.3\%$? Is the estimate \emph{statistically significant}?}\spc{4}
+
+\end{enumerate}
+
+\problem{We will revisit the concept of a degenerate point estimator as in the first problem but this time let the DGP be $\Xoneton \iid \normnot{\theta}{\sigsq}$ where $\sigsq$ is considered known. We are focused on point estimation for $\theta$ and the range of possible values is all numbers i.e. $\Theta = \reals$. Of course we use $\thetahat = \Xbar$. But we also consider the \qu{bad} point estimator $\thetahat_{\text{bad}} = 1$.}
+
+\begin{enumerate}
+
+\intermediatesubproblem{Graph the bias of $\thetahat_{\text{bad}}$ over all $\theta$. Label your axes.}\spc{4}
+
+\intermediatesubproblem{Graph the risk of $\thetahat$ and $\thetahat_{\text{bad}}$ under squared error loss. Label your axes and provide appropriate tick marks on the axes.}\spc{5}
+
+\hardsubproblem{Compare $\thetahat_{\text{bad}}$ to $\thetahat$ using the sup risk under squared error loss. How much better is $\Xbar$? With $n$ getting larger does it get even better?}\spc{3}
+
+\extracreditsubproblem{Assume that $\theta$ is drawn from $\Theta = \reals$ uniformly. This breaks all of our rules about how $\theta$ is one fixed unknown value. But ignore that rule. How much better is $\Xbar$? With $n$ getting larger does it get even better?}\spc{7}
 
 \end{enumerate}
 
 
+\problem{In lecture we did a \emph{two-sided one sample z test}. Using the same data: $n=10$ and $\xbar = 70$, we will now test if the population that this sample was drawn from has a \emph{greater} mean than female height at $\alpha = 5\%$. According to an article \href{https://www.usablestats.com/lessons/normal}{(click here)}, female height is $\iid \normnot{65}{3.5^2}$.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the alternative and null hypotheses. Remember our theory we want to prove is: our population mean is greater than the mean female height.}\spc{1}
+
+\easysubproblem{Write the distribution of our estimator under the null hypothesis which we denote $\thetahat~|~H_0$. Assume the standard deviation is the same in our population as in the female height population. You will then calculate the standard error of $\Xbar$. Provide your final answer in terms of standard error and round it to two decimal places. Then illustrate the sampling distribution. Label the x-axis and provide tick marks on the x-axis.}\spc{9}
+
+
+\intermediatesubproblem{Will this test be an \emph{exact test} or instead an \emph{approximate test}? Explain.}\spc{3}
+
+
+
+\intermediatesubproblem{Compute the retainment region and rejection region (remember $\Theta = \reals$) and denote these two regions in your illustration in (b). To compute these regions, I'll provide you with the following fact: $\Phi(-1.645) = 5\%$.}\spc{4}
+
+\easysubproblem{Why is this test called a \emph{one-sided one-sample z test}?}\spc{3}
+
+\easysubproblem{Run the test and write your conclusion using an English sentence.}\spc{1}
+
+\easysubproblem{What type of error could you have made?}\spc{0}
+
+\intermediatesubproblem{Find the p-value of our estimate as a function of $\Phi$. Illustrate the p-value in the illustration in (b).}\spc{3}
+
+\easysubproblem{Without computing the p-value explicitly, would it be above or below $\alpha = 5\%$? Is the estimate \emph{statistically significant}?}\spc{2}
+ 
+\end{enumerate}
+
+
+\problem{In the previous problem we did a \emph{one-sided one-sample z test}. We will now do a \emph{one-sided one-sample t test} Using the same data: $n=10$ and $\xbar = 70.5$, we will again test if the population that this sample was drawn from has a \emph{greater} mean than female height at $\alpha = 5\%$. According to \href{https://www.usablestats.com/lessons/normal}{this article}, female height is $\sim \normnot{65}{3.5^2}$. In this test, you need to compute $s = 2.07$, the sample standard deviation.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the alternative and null hypotheses. Same as 2(a).}\spc{2}
+
+\easysubproblem{Write the distribution of the \emph{standardized} estimator under the null hypothesis. Standardized means the mean is subtracted and you divide by the standard error. In contrast to 2(b), we do \emph{not assume} the standard deviation is the same in our population as in the female height population. Illustrate the sampling distribution. Label the x-axis. You do \emph{not} need to provide tick marks on the x-axis as this would require using a special calculator.}\spc{9}
+
+
+\intermediatesubproblem{Will this test be an \emph{exact test} or instead an \emph{approximate test}? Explain.}\spc{3}
+
+
+
+\intermediatesubproblem{Compute the retainment region and rejection region (remember $\Theta = \reals$) and denote these two regions in your illustration in (b). To compute these regions, I'll provide you with the following fact: $F_{T_9}(-1.833) = 5\%$ where $F_{T_9}$ is the CDF of Student's T distribution with 9 degree of freedom. (These are the kind of facts that will be provided to you on exams).}\spc{3}
+
+\easysubproblem{Why is this test called a \emph{one-sided one sample t test}?}\spc{3}
+
+\easysubproblem{Why is $\sigsq$ called a \emph{nuisance parameter}? Explain.}\spc{2}
+
+\easysubproblem{Run the test and write your conclusion using an English sentence.}\spc{1}
+
+\easysubproblem{What type of error could you have made?}\spc{0}
+
+\intermediatesubproblem{Find the p-value of our estimate as a function of $F_{t_9}$. Illustrate the p-value in the illustration in (b).}\spc{3}
+
+\easysubproblem{Without computing the p-value explicitly, would it be above or below $\alpha = 5\%$? Is the estimate \emph{statistically significant}?}\spc{1}
+ 
+\end{enumerate}
+
+
+\problem{In the previous problem, we needed to estimate the nuisance paramter $\sigsq$ in order to obtain Student's T distribution for the sampling distribution of the estimator, the sample average. An intuitive estimator for $\sigsq$ is $\hat{\sigma}^2 := \oneover{n}\sum_{i=1}^n (x_i - \theta)^2$.}
+
+\begin{enumerate}
+
+\easysubproblem{Given only the data $\xoneton$, what is the practical problem with $\doublehat{\sigma}^2$ as defined by $\hat{\sigma}^2$ above?}\spc{1}
+
+\easysubproblem{Solving this practical problem, how would you define $\doublehat{\sigma}^2$?}\spc{1}
+
+\easysubproblem{[MA] Let $S^2 = \frac{n}{n-1}\hat{\sigma}^2$. The constant $\frac{n}{n-1}$ is known as \href{https://en.wikipedia.org/wiki/Bessel\%27s_correction}{Bessel's correction}. Write the formula for $S^2$ only as a function of the data (the quantity $n$ is considered a function of the data, because it is the sample size which is the data's dimensionality).}\spc{1}
+
+\intermediatesubproblem{Prove $S^2$ is unbiased to directly without computing $\expe{\hat{\sigma}^2}$ first (which is in the lecture). This is remarkably similar to the computation of $\expe{\hat{\sigma}^2}$ but different enough to make you think. Somewhere in this proof, you need to use the assumption that the DGP is $\iid$. Mark that location clearly.}\spc{11}
+
+
+\easysubproblem{[MA] $S^2$ is an estimator for $\sigsq$. A natural estimator for $\sigma$ then is $S := \sqrt{S^2}$. Write the formula for $S$ below.}\spc{1}
+
+\intermediatesubproblem{[MA] Even though $S^2$ is unbiased, it turns out that $S$ is biased due to Jensen's Inequality (which is taught in 368). Bessel's correction was a \qu{one-size fits all} correction to the bias for sample variance. Unfortunately, there's no analogous \qu{one-size fits all} correction to the bias for sample standard deviation; for every DGP it's different. Let the DGP be $\iid \normnot{\theta}{\sigsq}$ where neither parameter are known. In 368, an extra credit problem shows that 
+
+\beqn
+\expe{S} = \sqrt{\frac{2}{n-1}} \frac{\Gamma(n/2)}{\Gamma((n-1)/2)} \sigma
+\eeqn
+
+where $\Gamma()$ is called the \emph{gamma function}. Create a new estimator $S_*$ that's unbiased for the DGP $\iid \normnot{\theta}{\sigsq}$ and write its formula as a function of the data only (the quantity $n$ is considered a function of the data, because it is the sample size which is the data's dimensionality).
+
+This looks harder than it is! You just need to mirror the trick used in class when we derived Bessel's Correction. You don't even need to know anything about the Gamma function.}\spc{2}
+
+\hardsubproblem{[MA] Prove that $S$ is asymptotically unbiased (a calculus exercise).}\spc{5}
+
+
+\extracreditsubproblem{Assume squared error loss and compute $R(S^2, \sigsq)$. Do this on a separate page.}\spc{3}
+
+
+\end{enumerate}
+
+\problem{We will now explore the concept of power and Type II errors. Let the DGP be $\iid \bernoulli{\theta}$.}
+
+
+\begin{enumerate}
+
+
+\easysubproblem{Let $H_0: \theta = .524$ and $H_a: \theta = .284$ and let $n = 20$. Find the approximate sampling distribution of $\thetahat = \Xbar$ using the CLT for both the null and alternative hypotheses. Leave in terms of standard error and compute to 3 decimal places.}\spc{3}
+
+\easysubproblem{Would this be a left-sided test, a right-sided test or a two sided test? Explain.}\spc{2}
+
+\easysubproblem{Illustrate the sampling distributions from the previous problem on one plot. Label the x-axis and provide tick marks.}\spc{10}
+
+\easysubproblem{For $\alpha = 5\%$, compute the retainment region and rejection region (remember $\Theta = \zeroonecl$) and denote these two regions in your illustration in (c). To compute these regions, I'll provide you with the following fact: $\Phi(-1.645) = 5\%$.}\spc{3}
+
+\easysubproblem{Write the definition of power (POW).}\spc{1}
+
+\easysubproblem{Explain why, in general, you want POW to be large and close to 100\%.}\spc{3}
+
+\intermediatesubproblem{Calculate POW as a function of $\Phi$.}\spc{7}
+
+\easysubproblem{Assuming $H_a$, in the illustration in (c), shade in the area corresponding to the integral that computes POW using vertical stripes and shade in the area corresponding to the integral that computes Type II error using horizontal stripes. Don't write anything to answer this question.}\spc{-0.5}
+
+\intermediatesubproblem{Let's do this generally. Let $H_0: \theta \geq \theta_0$ and $H_a: \theta = \theta_a < \theta_0$. Derive the power function $POW(\theta_0, \theta_a, n, \alpha)$ which uses the $\Phi$ function.}\spc{5}
+
+\intermediatesubproblem{Prove that $\lim_{n\rightarrow \infty} POW(\theta_0, \theta_a, n, \alpha) = 1$.}\spc{3}
+
+
+\intermediatesubproblem{Assume the DGP $\iid \normnot{\theta}{\sigsq}$ where $\sigsq$ is known. In a right-tailed test, we derived the power function in lecture as 
+
+\beqn
+POW(\theta_0, \theta_a, n, \sigma, \alpha) = 1 - \Phi\parens{-\frac{\sqrt{n}}{\sigma} (\theta_a - \theta_0) + z_{1 - \alpha}}.
+\eeqn
+
+Prove that $\lim_{\sigma \rightarrow 0} POW(\theta_0, \theta_a, n, \sigma, \alpha) = 1$.
+}\spc{5}
+
+
+
+\extracreditsubproblem{Let $H_0: \theta \geq \theta_0$ and $H_a: \theta = \theta_a < \theta_0$. Calculate the power function for the binomial exact test at size $\alpha$. Do this on a separate page.}\spc{3}
+
+\end{enumerate}
 
 \end{document}
