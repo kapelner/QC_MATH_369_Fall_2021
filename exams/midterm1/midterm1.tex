@@ -1,0 +1,218 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 369 / 690 Fall \the\year{} \\ Midterm Examination One}
+\author{Professor Adam Kapelner}
+
+\date{Thursday, October 7, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+
+\section*{Instructions}
+This exam is 70 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. I recommend answering all questions that are easy first and then circling back to work on the harder ones. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+\problem\timedsection{6} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{enumerate}[(a)]
+\item Beginning with a sample of data, it may be difficult to clearly define the population.
+\item Beginning with a well-defined population, it may be difficult to sample uniformly from this population.
+\item In a simple random sample, the probability of each item in the population being in the sample is the same.
+\item Samples from a real-world population are never truly independent.
+\item If you had access to the entire population, population parameter values would be known exactly.
+\item Samples can sometimes be thought of realizations from a process defined by random variables, the DGP.
+\item The data $\xoneton$ can be sampled only after assuming a DGP explicitly.
+\item The goal of point estimation is to find an approximation of the true value of $\theta$.
+\item The goal of theory testing is to find an approximation of the true value of $\theta$.
+\item The goal of statistical inference (in general) is to learn the true values of $\xoneton$.
+\item The goal of statistical inference (in general) is to learn the true values of $x_1, \ldots, x_N$.
+\item Statistical estimates can only be computed after the data $\xoneton$ is sampled.
+\item The sampling distribution can only be known after the data's values $\xoneton$ are known.
+\item The estimator $\Xbar$ is unbiased for all DGP's (as long as the DGP's expectation exists).
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+\problem\timedsection{15} Consider the DGP $\Xoneton \iid \bernoulli{\theta}$ and the estimators\\ $\thetahat_B = \Xbar + 0.1$ and $\thetahat_A = \Xbar + 0.1 / n$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{19} 
+
+\begin{enumerate}[(a)]
+\item The estimator $\thetahat_B$ is unbiased for all $\theta \in \Theta$.
+\item The estimator $\thetahat_B$ is unbiased for at least one $\theta \in \Theta$.
+\item The estimator $\thetahat_B$ is asymptotically unbiased for all $\theta \in \Theta$.
+\item Every possible estimate $\thetahathat_B$ is in $\Theta$.
+\item At least one estimate $\thetahathat_B$ is in $\Theta$.
+\item The L1 loss for $\thetahat_B$ is always $\geq 0.1$.
+\item The L2 loss for $\thetahat_B$ is always  $\geq 0.1$.
+\item The L1 loss for $\thetahat_B$ is always  $\geq 0$.
+\item The L2 loss for $\thetahat_B$ is always  $\geq 0$.
+\item The risk under L1 loss for $\thetahat_B$ is 0.1.
+\item The risk under L2 loss for $\thetahat_B$ is $\expe{(\Xbar - \theta)^2 + 0.2 (\Xbar - \theta)}$ + 0.01.
+\item The risk under L2 loss for $\thetahat_B$ is $\theta(1-\theta)  / n$ + 0.01.
+\item $\text{MSE}[\thetahat_B] = \theta(1-\theta)  / n$ + 0.01.
+\item The sup risk under L2 loss for $\thetahat_B$ is $\inverse{4n}$.
+\item The estimator $\thetahat_A$ is unbiased for all $\theta \in \Theta$.
+\item The estimator $\thetahat_A$ is asymptotically unbiased for all $\theta \in \Theta$.
+\item $\text{MSE}[\thetahat_A] = \theta(1-\theta)  / n + 0.01 /n^2$.
+\item The sup risk under L2 loss for $\thetahat_A$ is $\inverse{4n}$.
+\item The loss function $\ell(\thetahathat, \theta) = |\thetahathat - \theta|^{0.5}$ is a valid loss function for these both $\thetahat_B$ and $\thetahat_A$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+\problem\timedsection{10} The following are conceptual question about hypothesis testing.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} 
+
+\begin{enumerate}[(a)]
+\item If you wish to prove a theory to the wide world, it is best to let detractors prove your theory wrong and if they cannot, your theory will be widely accepted.
+\item If the value of $\theta$ were to be known, there would be no reason to do statistical hypothesis testing.
+\item Using a sample of data, it is possible to absolutely prove (or disprove) a theory.
+\item If you are trying to prove that your investment idea is correct, the null hypothesis should be that your investment idea is incorrect.
+\item Type I errors are only possible if $H_0$ is true.
+\item When doing a power calculation, we assume $H_0$ is true.
+\item The type I error rate is unaffected by the sample size.
+\item $\prob{\thetahat \in \text{RET}} = \alpha$.
+\item If you retain $H_0$ it is impossible to know if you made a Type I error.
+\item If you retain $H_0$ it is impossible to know if you made a Type II error.
+%\item Level and size are always the same for any test.
+%\item Fisher's p-value is unaffected by the value of $\alpha$.
+\item The lower Fisher's p-value is, the more \qu{statistically significant} the result of the test becomes.
+\item If $\alpha = 0$, power is always 1.
+\item In the one-sample z test, if $\alpha$ decreases, power decreases.
+\item In the one-sample z test, if $n$ decreases, power decreases.
+\item In the one-sample z test, if $\sigsq$ decreases, power decreases.
+\item In the one-sample z test, if $H_0: \theta \leq 3.6$, $H_a: \theta > 3.6$, this test would be \qu{one-sided} and \qu{right-tailed}.
+\item In the one-sample z test, if $H_0: \theta \leq 3.6$, $H_a: \theta > 3.6$, $\alpha = 5\%$, $n=500$ and $\sigsq = 1.3$, power can be computed.
+%\item In the one-sample z test, if $H_0: \theta \leq 3.6$, $H_a: \theta > 3.6$, $\alpha = 5\%$ and $\sigsq = 1.3$, power approaches 100\% as $n$ increases.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+\problem\timedsection{12} We flip a fair coin 7 times and record the proportion of heads $\thetahathat$. Let $\theta$ denote the probability of flipping heads. Below is a table of the PMF of the $\binomial{7}{0.5}$ rounded to three digits.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|cccccccc} %round(dbinom(0:7,7,0.5), 3)
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+$p(x)$ & 0.008 & 0.055 & 0.164 & 0.273 & 0.273 & 0.164 & 0.055 & 0.008
+\end{tabular}
+\end{table}
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13} 
+
+\begin{enumerate}[(a)]
+\item The sample size is $n=7$.\\
+
+Assume for the following questions that we are trying to prove that the coin is unfair.
+\item $H_0: \theta = 0.5$
+\item The size 5\% is not attainable for our test scenario.
+\item If the level was 1\%, the rejection region for $\thetahathat$ would be $\braces{0, 1}$.
+\item If the level was 7.5\%, the rejection region for $\thetahathat$ would be $\braces{0, \oneover{7}, \frac{6}{7}, 1}$.
+\item If the level was 5\%, and $\thetahathat  = 4/7$, the null hypothesis would be retained.
+\item The test in (f) is called a \qu{Binomial Exact Test}.\\
+
+Assume for the following questions that we are trying to prove that the coin is biased towards heads.
+\item $H_0: \theta = 0.5$
+\item If the level was 5\%, the rejection region for $\thetahathat$ would be $\braces{0, \oneover{7}, \frac{6}{7}, 1}$.
+\item If the level was 5\%, and $\thetahathat  = 4/7$, the null hypothesis would be retained.
+\item If the level was 5\%, and $\thetahathat  = 4/7$, Fisher's $p$-val would be 22.7\%.
+\item If the level was 1\%, and $\thetahathat  = 5/7$, Fisher's $p$-val would be larger than Fisher's $p$-val when $\thetahathat  = 4/7$.
+\item If the level was 1\%, and $\thetahathat  = 5/7$, you have enough information to compute power of this test.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+
+
+%set.seed(1)
+%x = round(rnorm(7, 27, 2), 1)
+%sum((x - mean(x))^2) / length(x)
+%(27.1 - 29) / (sd(x) / sqrt(7))
+%(27.1 - 29) / (sqrt(7/6*2.71) / sqrt(7))
+\problem\timedsection{13} We suspect that pollution in a certain river is affecting the nutrition for a Atlantic Salmon and thereby making their adult size less than what is historically expected for salmon. Salmon are known to have mean length 29in with standard deviation 0.95in and for the distribution to be normal. However, we are not sure what the standard deviation for malnourished salmon will be. We collect the following lengths of salmon from the river: $\bv{x} = \angbraces{25.7, 27.4, 25.3, 30.2, 27.7, 25.4, 28.0}$ where $\xbar = 27.1$ and $\hat{\sigma}^2 = 2.71$. We would like to prove that $\theta$, the length of fish from the polluted river, are smaller than regular salmon via a 1-sample t-test. Below is a table of CDF values for the T distribution for many different degrees of freedom (df):
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|ccccccc} %round(dbinom(0:7,7,0.5), 3)
+df & 0.1\% & 0.5\% & 1\% & 5\% & 10\% & 15\% & 20\% \\ \hline
+6 & -5.21 & -3.71 & -3.14 &-1.94 &-1.44 &-1.13 &-0.91 \\
+7 & -4.79 & -3.50 &-3.00 &-1.89 &-1.41 &-1.12 &-0.90 \\
+8 & -4.50 & -3.36 &-2.90 &-1.86 &-1.40 &-1.11 &-0.89 \\
+\end{tabular}
+\end{table}
+
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item The value $\xbar = 27.1$ is a estimate realized from an unbiased estimator.
+\item The value $\hat{\sigma}^2 = 2.71$ is a estimate realized from an unbiased estimator.
+\item The reason why we use a 1-sample t-test is because we know $\sigma = 0.95$.
+\item The value of $\xbar$ standardized is -1.855 rounded to the nearest 3 decimals.
+\item The value of $\xbar$ standardized is -2.827 rounded to the nearest 3 decimals.
+\item The value of $\xbar$ standardized is -3.298 rounded to the nearest 3 decimals.
+\item The value of $\xbar$ standardized is -3.054 rounded to the nearest 3 decimals.
+\item The null hypothesis is rejected at $\alpha = 1\%$.
+\item The null hypothesis is rejected at $\alpha = 5\%$.
+\item Fisher's $p$-val for this test is likely closest to 1\% among all the options in the table of CDF values for the T distribution.
+\item Fisher's $p$-val for this test is likely closest to 5\% among all the options in the table of CDF values for the T distribution.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+\problem\timedsection{14} Chevalier de Mere was a French nobleman writer / philosopher who lived from 1607-1684. But he is far better known for his contribution to probability theory likely due to his compulsive gambling habit. Before notions of probabilitistic independence, complement rule, random variable theory (all the familiar 241 topics) were discovered, he wrote a letter to Blaise Pascal where he accurately conjectured that the probability of winning a certain dice game. In this dice game, you \qu{win} if you get at least one double 6 in a roll of two dice among 24 rolls of two dice. He conjectured that the probability of winning was less than 50\% and the actual probability is $\theta = 49.14\%$. Assuming each of these entire 24 rolls defines one game and he plays many games, then the DGP for winning of each game truly is $\iid \bernoulli{0.4914}$. Assuming he kept a flawless mental record of wins and losses, how many games would he need to observe to reject the null hypothesis that $\theta \geq 50\%$ at $\alpha = 5\%$ with power of 80\%? The two CDF values for the standard normal distribution that are needed are: $\Phi(-1.645)  = 5\%$ and $\Phi(0.84)  = 80\%$. 
+
+\vspace{-0.2cm}\benum\multchoicewithpoints{12}{Select the answer choice below whose number is \emph{closest} to your answer.}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item 1,000
+\item 5,000
+\item 7,500
+\item 10,000
+\item 15,000
+\item 20,000
+\item 30,000
+\item 40,000
+\item 50,000
+\item 75,000
+\item 100,000
+\item 200,000
+
+\end{enumerate}
+\end{multicols}
+\eenum\instr\pagebreak
+
+\end{document}
+
