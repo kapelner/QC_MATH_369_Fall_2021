@@ -1,0 +1,573 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+\usepackage[normalem]{ulem}
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 369 / 690 Fall \the\year{} \\ Midterm Examination Two}
+\author{Professor Adam Kapelner}
+
+\date{Thursday, November 11, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+\vspace{-0.3cm}
+\section*{Instructions}
+This exam is 70 minutes (variable time per question) and closed-book. You are allowed \textbf{one} page (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. I recommend answering all questions that are easy first and then circling back to work on the harder ones. \ingray{Gray text} means the text is repeated verbatim from a previous problem. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{10} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{16}  We are interested in understanding times in milliseconds for router packet switching under heavy traffic situations on the Internet at two different sites: New York and Chicago which we will denote population 1 and 2 respectively. $n=15$ data points are recorded for New York and $n=15$ data points are recorded for Chicago. We can assume the DGP for samples from population 1 is iid and we can assume the DGP for samples from population 1 is iid and that samples between populations are independent. We also assume that both populations have their first two moments defined. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. We seek to prove a difference between the populations.
+
+We first would like to prove that the population means are different. Denote the means of both populations by $\theta_1$ and $\theta_2$. We will employ $\thetahat_1 = \Xbar_1$ and $\thetahat_2 = \Xbar_2$.
+
+\begin{enumerate}[(a)]
+\item The DGP that produced sample 1 has the same DGP that produced sample 2 but with different
+\item $\thetahat_1$ and $\thetahat_2$ are unbiased estimators
+\item $\thetahat_1$ and $\thetahat_2$ are the method of moments estimators for $\theta_1$ and $\theta_2$ respectively
+\item $\thetahat_1$ and $\thetahat_2$ are the maximum likelihood estimators for $\theta_1$ and $\theta_2$ respectively
+\item $\thetahat_1$ and $\thetahat_2$ are asymptotically normal due to the central limit theorem
+\item $\thetahat_1$ and $\thetahat_2$ are asymptotically normal due to the MLE monster theorem
+\item It is a reasonable assumption that the variances of the DGP's for the two populations are equal
+
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly T distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately T distributed
+\item We have enough information to justify that the sampling distribution of $(\thetahat_1 - \thetahat_2)^2$ is exactly $\chi^2$ distributed
+\item We have enough information to justify that the sampling distribution of $(\thetahat_1 - \thetahat_2)^2$ is approximately $\chi^2$ distributed
+\item We have enough information to justify that the sampling distribution of $(\thetahat_1 - \thetahat_2)^2$ is exactly F distributed
+\item We have enough information to justify that eth sampling distribution of $(\thetahat_1 - \thetahat_2)^2$ is approximately F distributed
+
+\item $H_0: \theta_1 \neq \theta_2$
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{7} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13}  \ingray{We are interested in understanding times in milliseconds for router packet switching under heavy traffic situations on the Internet at two different sites: New York and Chicago which we will denote population 1 and 2 respectively. $n=15$ data points are recorded for New York and $n=15$ data points are recorded for Chicago. We can assume the DGP for samples from population 1 is iid and we can assume the DGP for samples from population 1 is iid and that samples between populations are independent. We also assume that both populations have their first two moments defined. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. We seek to prove a difference between the populations.
+
+We first would like to prove that the population means are different. Denote the means of both populations by $\theta_1$ and $\theta_2$. We will employ $\thetahat_1 = \Xbar_1$ and $\thetahat_2 = \Xbar_2$} to test $H_a: \theta_1 \neq \theta_2$. We will first assume both DGP's are normal and that $\sigma = 24.61$ Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.
+
+\begin{enumerate}[(a)]
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly T distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately T distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly Fisher-Behrens distributed
+
+\item A justified standardized test statistic is -0.4996635 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.4996494 rounded to the nearest 7 digits %%%%
+\item A justified standardized test statistic is -0.7066109 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.1824462 rounded to the nearest 7 digits
+
+\item The null is rejected at $\alpha = 5\%$
+\item The null is retained at $\alpha = 5\%$
+
+\item Fisher's $p$-value $ < \alpha = 5\%$
+\item Fisher's $p$-value $ \geq \alpha = 5\%$
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\problem\timedsection{10} These are conceptual questions about statistical inference and sampling.
+%
+%\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14}  \ingray{We are interested in understanding times in milliseconds for router packet switching under heavy traffic situations on the Internet at two different sites: New York and Chicago which we will denote population 1 and 2 respectively. $n=15$ data points are recorded for New York and $n=15$ data points are recorded for Chicago. We can assume the DGP for samples from population 1 is iid and we can assume the DGP for samples from population 1 is iid and that samples between populations are independent. We also assume that both populations have their first two moments defined. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. We seek to prove a difference between the populations.
+%
+%We first would like to prove that the population means are different. Denote the means of both populations by $\theta_1$ and $\theta_2$. We will employ $\thetahat_1 = \Xbar_1$ and $\thetahat_2 = \Xbar_2$ to test $H_a: \theta_1 \neq \theta_2$. We will first assume both DGP's are normal and that} $\sigma_1 = \sigma_2$ but unknown. Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.
+%
+%\begin{enumerate}[(a)]
+%\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly normally distributed
+%\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately normally distributed
+%\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly T distributed
+%\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately T distributed
+%\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly Fisher-Behrens distributed
+%
+%\item A justified standardized test statistic is -0.4996635 rounded to the nearest 7 digits
+%\item A justified standardized test statistic is -0.4996494 rounded to the nearest 7 digits %%%%
+%\item A justified standardized test statistic is -0.7066109 rounded to the nearest 7 digits
+%\item A justified standardized test statistic is -0.1824462 rounded to the nearest 7 digits
+%
+%\item The null is rejected at $\alpha = 5\%$
+%\item The null is retained at $\alpha = 5\%$
+%
+%\item Fisher's $p$-value $ < \alpha = 5\%$
+%\item Fisher's $p$-value $ \geq \alpha = 5\%$
+%\end{enumerate}
+%\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{5} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13}  \ingray{We are interested in understanding times in milliseconds for router packet switching under heavy traffic situations on the Internet at two different sites: New York and Chicago which we will denote population 1 and 2 respectively. $n=15$ data points are recorded for New York and $n=15$ data points are recorded for Chicago. We can assume the DGP for samples from population 1 is iid and we can assume the DGP for samples from population 1 is iid and that samples between populations are independent. We also assume that both populations have their first two moments defined. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. We seek to prove a difference between the populations.
+
+We first would like to prove that the population means are different. Denote the means of both populations by $\theta_1$ and $\theta_2$. We will employ $\thetahat_1 = \Xbar_1$ and $\thetahat_2 = \Xbar_2$ to test $H_a: \theta_1 \neq \theta_2$. We will first assume both DGP's are normal and that} $\sigma_1 \neq \sigma_2$ and both values are unknown. Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.
+
+\begin{enumerate}[(a)]
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly T distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately T distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly Fisher-Behrens distributed
+
+\item A justified standardized test statistic is -0.4996635 rounded to the nearest 7 digits %%%%
+\item A justified standardized test statistic is -0.4996494 rounded to the nearest 7 digits 
+\item A justified standardized test statistic is -0.7066109 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.1824462 rounded to the nearest 7 digits
+
+\item The null is rejected at $\alpha = 5\%$
+\item The null is retained at $\alpha = 5\%$
+
+\item Fisher's $p$-value $ < \alpha = 5\%$
+\item Fisher's $p$-value $ \geq \alpha = 5\%$
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{5} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12}  \ingray{We are interested in understanding times in milliseconds for router packet switching under heavy traffic situations on the Internet at two different sites: New York and Chicago which we will denote population 1 and 2 respectively. $n=15$ data points are recorded for New York and $n=15$ data points are recorded for Chicago. We can assume the DGP for samples from population 1 is iid and we can assume the DGP for samples from population 1 is iid and that samples between populations are independent. We also assume that both populations have their first two moments defined. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. We seek to prove a difference between the populations.
+
+We first would like to prove that the population means are different. Denote the means of both populations by $\theta_1$ and $\theta_2$. We will employ $\thetahat_1 = \Xbar_1$ and $\thetahat_2 = \Xbar_2$ to test $H_a: \theta_1 \neq \theta_2$. \sout{We will first assume both DGP's are normal.}} We have reason to suspect these distributions are very non-normal and extreme-tailed. Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.
+
+\begin{enumerate}[(a)]
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is approximately normally distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly T distributed
+\item We have enough information to justify that the sampling distribution of $\thetahat_1 - \thetahat_2$ is exactly Fisher-Behrens distributed
+
+\item A justified standardized test statistic is -0.4996635 rounded to the nearest 7 digits %%%%
+\item A justified standardized test statistic is -0.4996494 rounded to the nearest 7 digits 
+\item A justified standardized test statistic is -0.7066109 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.1824462 rounded to the nearest 7 digits
+
+\item The null is rejected at $\alpha = 5\%$
+\item The null is retained at $\alpha = 5\%$
+
+\item Fisher's $p$-value $ < \alpha = 5\%$
+\item Fisher's $p$-value $ \geq \alpha = 5\%$
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{6} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} We have reason to suspect these distributions are very non-normal and extreme-tailed. One such model is the Lomax distribution which is a two-parameter survival model. To keep things tractable for the purposes of this class, we will set one parameter to be equal to one. Assume $\Xoneton \iid \text{Lomax}(1, \theta) := f(x; \theta) = \theta (1 + x)^{-(\theta + 1)}$ and $\support{X} = (0, \infty)$. Note: we are redefining the definition of $\theta$ now --- it is now a parameter within this assumed DGP! The mean of this rv is $\mu_1 := \expe{X} = 1 / (\theta -1)$. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. 
+
+\begin{enumerate}[(a)]
+\item $\theta = (1 + \mu_1) / \mu_1$
+\item $\thetahatmm = (1 + \muhat_1) / \muhat_1$
+\item $\thetahatmm = (1 + \Xbar) / \Xbar$
+\item $\thetahatmm = (1 + \hat{\sigma}) / \hat{\sigma}$
+
+\item $\thetahatmm$ is definitely unbiased without further proof
+\item $\thetahatmm$ is definitely asymptotically normal without further proof
+\item $\thetahatmm$ is definitely asymptotically efficient (i.e. its variance approaches the CRLB of variance) without further proof
+\item Since there is only one parameter of the DGP, $\thetahatmm = \thetahatmle$ definitely without further proof
+
+\item $\thetahathatmm = (1 + \xbar) / \xbar$
+\item $\thetahathatmm = (1 + s) / s$
+
+\item $\thetahathatmm_2 = 1.095238$ rounded to the nearest 6 digits 
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{10} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} \ingray{We have reason to suspect these distributions are very non-normal and extreme-tailed. One such model is the Lomax distribution which is a two-parameter survival model. To keep things tractable for the purposes of this class, we will set one parameter to be equal to one. Assume $\Xoneton \iid \text{Lomax}(1, \theta) := f(x; \theta) = \theta (1 + x)^{-(\theta + 1)}$ and $\support{X} = (0, \infty)$. Note: we are redefining the definition of $\theta$ now --- it is now a parameter within this assumed DGP! The mean of this rv is $\mu_1 := \expe{X} = 1 / (\theta -1)$. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$.}
+
+\begin{enumerate}[(a)]
+\item $\mathcal{L}(\theta; x) = f(x; \theta)$
+\item $\ell(\theta; x) = f(x; \theta)$
+\item $\mathcal{L}(\theta; \xoneton) = \prod_{i=1}^n f(x_i; \theta)$
+\item $\ell(\theta; \xoneton) = \prod_{i=1}^n \natlog{f(x_i; \theta)}$
+\item $\thetahatmle = \Xbar$
+\item $\thetahatmle = (1 + \Xbar) / \Xbar$
+\item $\thetahatmle = n \inverse{\sum_{i=1}^n \natlog{1 + X_i}}$
+\item $I(\theta) = \int_\reals \ell'(\theta; X)^2 \theta (1 + x)^{-(\theta + 1)} dx$
+\item $I(\theta) = \int_\reals x \ell'(\theta; X)^2 dx$
+\item $I(\theta) = -\expe{\ell''(\theta; X)}$
+\item $I(\theta) = 1 / (\theta - 1)$
+\item $I(\theta) = 1 / (\theta - 1)^2$
+\item $I(\theta) = 1 / \theta^2$
+\item $I(\theta) \propto 1$
+
+\item $\thetahatmle$ is definitely unbiased without further proof
+\item $\thetahatmle$ is definitely asymptotically normal without further proof
+\item $\thetahatmle$ is definitely asymptotically efficient (i.e. its variance approaches the CRLB of variance) without further proof
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{5} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} \ingray{We have reason to suspect these distributions are very non-normal and extreme-tailed. One such model is the Lomax distribution which is a two-parameter survival model. To keep things tractable for the purposes of this class, we will set one parameter to be equal to one. Assume $\Xoneton \iid \text{Lomax}(1, \theta) := f(x; \theta) = \theta (1 + x)^{-(\theta + 1)}$ and $\support{X} = (0, \infty)$. Note: we are redefining the definition of $\theta$ now --- it is now a parameter within this assumed DGP! The mean of this rv is $\mu_1 := \expe{X} = 1 / (\theta -1)$. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$.} In this setting, $\thetahatmle = n \inverse{\sum_{i=1}^n \natlog{1 + X_i}}$ and $I(\theta) = 1 / \theta^2$.
+
+\begin{enumerate}[(a)]
+\item For an estimator $\thetahat$ whose expectation is $\theta$, the standard deviation of $\thetahat$ must be at least $\theta  / \sqrt{n}$
+\item The variance of $\thetahatmle$ is exactly $\theta^2 / n$
+\item The variance of $\thetahatmle$ is approximately $\theta^2 / n$
+
+\item $\thetahatmle \convp \theta$
+\item $I(\thetahatmle) \convp I(\theta)$
+\item $I(\thetahatmle)^{-1} \convp I(\theta)^{-1}$
+\item $I(\thetahatmle) \convd \stdnormnot$
+\item $\thetahatmle \convd \stdnormnot$
+\item $\displaystyle \frac{\thetahatmle}{\se{\thetahatmle}} \convd \stdnormnot$
+\item If $\displaystyle \frac{\thetahatmle}{\se{\thetahatmle}} \convd \stdnormnot$ then $\displaystyle \frac{\squared{\thetahatmle}}{\var{\thetahatmle}} \convd \chisq{1}$
+
+
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{7} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{10} \ingray{We have reason to suspect these distributions are very non-normal and extreme-tailed. One such model is the Lomax distribution which is a two-parameter survival model. To keep things tractable for the purposes of this class, we will set one parameter to be equal to one. Assume $\Xoneton \iid \text{Lomax}(1, \theta) := f(x; \theta) = \theta (1 + x)^{-(\theta + 1)}$ and $\support{X} = (0, \infty)$. Note: we are redefining the definition of $\theta$ now --- it is now a parameter within this assumed DGP! The mean of this rv is $\mu_1 := \expe{X} = 1 / (\theta -1)$. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. In this setting, $\thetahatmle = n \inverse{\sum_{i=1}^n \natlog{1 + X_i}}$ and $I(\theta) = 1 / \theta^2$.} We wish to prove that the $\theta$'s in the two populations are different. Given the raw data, we can compute the maximum likelihood estimates: $\thetahathatmle_1 = 0.996$ and $\thetahathatmle_1 = 0.998$ rounded to the nearest 3 digits. Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.
+
+\begin{enumerate}[(a)]
+\item The standardized test statistic can be expressed as $\displaystyle\frac{\thetahathatmle_1 - \thetahathatmle_2}{\theta / \sqrt{n}}$
+
+\item The standardized test statistic can be expressed as $\displaystyle\frac{\thetahathatmle_1 - \thetahathatmle_2}{\theta \sqrt{2 / n}}$
+
+\item A justified standardized test statistic is -0.4996635 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.01509039 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.005493704 rounded to the nearest 7 digits %%%%%%%%
+\item A justified standardized test statistic is -0.0002225672 rounded to the nearest 7 digits
+
+\item If the null hypothesis in the test of no mean difference was retained, then the confidence interval for the mean different *must* contain zero (for any valid $\alpha$).
+\item $\doublehat{CI}_{\theta_1, 95\%}$ cannot be computed given the data at hand
+\item $\doublehat{CI}_{\theta_1 - \theta_2, 95\%}$ cannot be computed given the data at hand
+
+\item $\doublehat{CI}_{\theta_1, \alpha}$ can only be computed for some values of $\alpha$ but not other values of $\alpha$
+
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{5} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} \ingray{We have reason to suspect these distributions are very non-normal and extreme-tailed. One such model is the Lomax distribution which is a two-parameter survival model. To keep things tractable for the purposes of this class, we will set one parameter to be equal to one. Assume $\Xoneton \iid \text{Lomax}(1, \theta) := f(x; \theta) = \theta (1 + x)^{-(\theta + 1)}$ and $\support{X} = (0, \infty)$. Note: we are redefining the definition of $\theta$ now --- it is now a parameter within this assumed DGP! The mean of this rv is $\mu_1 := \expe{X} = 1 / (\theta -1)$. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. In this setting, $\thetahatmle = n \inverse{\sum_{i=1}^n \natlog{1 + X_i}}$ and $I(\theta) = 1 / \theta^2$. We wish to prove that the $\theta$'s in the two populations are different. Given the raw data, we can compute the maximum likelihood estimates: $\thetahathatmle_1 = 0.996$ and $\thetahathatmle_1 = 0.998$ rounded to the nearest 3 digits. Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.}
+
+\begin{enumerate}[(a)]
+\item The construction of a confidence interval estimate requires knowledge of the parameter(s)
+
+\item $\doublehat{CI}_{\theta_1 - \theta_2, 95\%} \approx \bracks{0.4919545, 1.500046}$ 
+\item $\doublehat{CI}_{\theta_1 - \theta_2, 95\%} \approx \bracks{-0.7155441, 0.7115441}$ 
+\item $\doublehat{CI}_{\theta_1 - \theta_2, 95\%} \approx \bracks{-0.2617679, 0.2577679}$ 
+
+\item The construction of $\doublehat{CI}_{\theta_1 - \theta_2, 95\%}$ in this problem relied on the central limit theorem
+\item The construction of $\doublehat{CI}_{\theta_1 - \theta_2, 95\%}$ in this problem relied on the monster MLE theorem
+\item The construction of $\doublehat{CI}_{\theta_1 - \theta_2, 95\%}$ in this problem relied on the asymptotic normality of $\thetahatmle_1  -\thetahatmle_2$
+\item The construction of $\doublehat{CI}_{\theta_1 - \theta_2, 95\%}$ in this problem relied on the delta method
+\item The construction of $\doublehat{CI}_{\theta_1 - \theta_2, 95\%}$ in this problem relied on Slutsky's theorem
+
+
+\item $\prob{\theta_1 - \theta_2 \in \doublehat{CI}_{\theta_1 - \theta_2, 95\%}} \approx 95\%$
+\item $\prob{\theta_1 - \theta_2 \in \hat{CI}_{\theta_1 - \theta_2, 95\%}} \approx 95\%$
+
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{10} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{7} \ingray{We have reason to suspect these distributions are very non-normal and extreme-tailed. One such model is the Lomax distribution which is a two-parameter survival model. To keep things tractable for the purposes of this class, we will set one parameter to be equal to one. Assume $\Xoneton \iid \text{Lomax}(1, \theta) := f(x; \theta) = \theta (1 + x)^{-(\theta + 1)}$ and $\support{X} = (0, \infty)$. Note: we are redefining the definition of $\theta$ now --- it is now a parameter within this assumed DGP! The mean of this rv is $\mu_1 := \expe{X} = 1 / (\theta -1)$. Here are sample statistics: $\xbar_1 = 6.01$, $\xbar_2 = 10.50$, $s_1 = 14.54$ and $s_2 = 31.62$. In this setting, $\thetahatmle = n \inverse{\sum_{i=1}^n \natlog{1 + X_i}}$ and $I(\theta) = 1 / \theta^2$. \sout{We wish to prove that the $\theta$'s in the two populations are different.} Given the raw data, we can compute the maximum likelihood estimates: $\thetahathatmle_1 = 0.996$ and $\thetahathatmle_1 = 0.998$ rounded to the nearest 3 digits. Note that $F_Z(.975) = 1.96$ and $F_{T_{14}}(.975) = 2.15$.} We are now interested in proving that $\theta_1^2 > \theta_0^2$ where $\theta_0 = 1$ which is a critical value in the Lomax distribution.
+
+\begin{enumerate}[(a)]
+\item The univariate delta method applies in our setting and where $g(\theta) = \theta^2$
+\item $\displaystyle \frac{\squared{\thetahatmle_1} - \theta_0^2}{2 \theta_0^2 / \sqrt{n}} \convd \stdnormnot$
+\item $\displaystyle \frac{\squared{\thetahatmle_1} - \theta_0^2}{2 \squared{\thetahatmle_1} / \sqrt{n}} \convd \stdnormnot$
+
+\item A justified standardized test statistic is -0.01546095 rounded to the nearest 7 digits
+\item A justified standardized test statistic is -0.01558538 rounded to the nearest 7 digits
+
+\item $\hat{CI}_{\theta_1, 95\%} \approx \bracks{\thetahatmle_1 \pm 1.96 \times 2 \displaystyle\frac{\theta_0^2}{\sqrt{n}}}$
+\item $\hat{CI}_{\theta_1, 95\%} \approx \bracks{\thetahatmle_1 \pm 1.96 \times  2 \displaystyle\frac{\squared{\thetahatmle_1}}{\sqrt{n}}}$
+\end{enumerate}
+\eenum\instr\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{6} These are conceptual questions about statistical inference and sampling.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{14} 
+
+\begin{enumerate}[(a)]
+\item Beginning with a sample of data, it may be difficult to clearly define the population.
+\item Beginning with a well-defined population, it may be difficult to sample uniformly from this population.
+\item In a simple random sample, the probability of each item in the population being in the sample is the same.
+\item Samples from a real-world population are never truly independent.
+\item If you had access to the entire population, population parameter values would be known exactly.
+\item Samples can sometimes be thought of realizations from a process defined by random variables, the DGP.
+\item The data $\xoneton$ can be sampled only after assuming a DGP explicitly.
+\item The goal of point estimation is to find an approximation of the true value of $\theta$.
+\item The goal of theory testing is to find an approximation of the true value of $\theta$.
+\item The goal of statistical inference (in general) is to learn the true values of $\xoneton$.
+\item The goal of statistical inference (in general) is to learn the true values of $x_1, \ldots, x_N$.
+\item Statistical estimates can only be computed after the data $\xoneton$ is sampled.
+\item The sampling distribution can only be known after the data's values $\xoneton$ are known.
+\item The estimator $\Xbar$ is unbiased for all DGP's (as long as the DGP's expectation exists).
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+\problem\timedsection{15} Consider the DGP $\Xoneton \iid \bernoulli{\theta}$ and the estimators\\ $\thetahat_B = \Xbar + 0.1$ and $\thetahat_A = \Xbar + 0.1 / n$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{19} 
+
+\begin{enumerate}[(a)]
+\item The estimator $\thetahat_B$ is unbiased for all $\theta \in \Theta$.
+\item The estimator $\thetahat_B$ is unbiased for at least one $\theta \in \Theta$.
+\item The estimator $\thetahat_B$ is asymptotically unbiased for all $\theta \in \Theta$.
+\item Every possible estimate $\thetahathat_B$ is in $\Theta$.
+\item At least one estimate $\thetahathat_B$ is in $\Theta$.
+\item The L1 loss for $\thetahat_B$ is always $\geq 0.1$.
+\item The L2 loss for $\thetahat_B$ is always  $\geq 0.1$.
+\item The L1 loss for $\thetahat_B$ is always  $\geq 0$.
+\item The L2 loss for $\thetahat_B$ is always  $\geq 0$.
+\item The risk under L1 loss for $\thetahat_B$ is 0.1.
+\item The risk under L2 loss for $\thetahat_B$ is $\expe{(\Xbar - \theta)^2 + 0.2 (\Xbar - \theta)}$ + 0.01.
+\item The risk under L2 loss for $\thetahat_B$ is $\theta(1-\theta)  / n$ + 0.01.
+\item $\text{MSE}[\thetahat_B] = \theta(1-\theta)  / n$ + 0.01.
+\item The sup risk under L2 loss for $\thetahat_B$ is $\inverse{4n}$.
+\item The estimator $\thetahat_A$ is unbiased for all $\theta \in \Theta$.
+\item The estimator $\thetahat_A$ is asymptotically unbiased for all $\theta \in \Theta$.
+\item $\text{MSE}[\thetahat_A] = \theta(1-\theta)  / n + 0.01 /n^2$.
+\item The sup risk under L2 loss for $\thetahat_A$ is $\inverse{4n}$.
+\item The loss function $\ell(\thetahathat, \theta) = |\thetahathat - \theta|^{0.5}$ is a valid loss function for these both $\thetahat_B$ and $\thetahat_A$.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+\problem\timedsection{10} The following are conceptual question about hypothesis testing.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{17} 
+
+\begin{enumerate}[(a)]
+\item If you wish to prove a theory to the wide world, it is best to let detractors prove your theory wrong and if they cannot, your theory will be widely accepted.
+\item If the value of $\theta$ were to be known, there would be no reason to do statistical hypothesis testing.
+\item Using a sample of data, it is possible to absolutely prove (or disprove) a theory.
+\item If you are trying to prove that your investment idea is correct, the null hypothesis should be that your investment idea is incorrect.
+\item Type I errors are only possible if $H_0$ is true.
+\item When doing a power calculation, we assume $H_0$ is true.
+\item The type I error rate is unaffected by the sample size.
+\item $\prob{\thetahat \in \text{RET}} = \alpha$.
+\item If you retain $H_0$ it is impossible to know if you made a Type I error.
+\item If you retain $H_0$ it is impossible to know if you made a Type II error.
+%\item Level and size are always the same for any test.
+%\item Fisher's p-value is unaffected by the value of $\alpha$.
+\item The lower Fisher's p-value is, the more \qu{statistically significant} the result of the test becomes.
+\item If $\alpha = 0$, power is always 1.
+\item In the one-sample z test, if $\alpha$ decreases, power decreases.
+\item In the one-sample z test, if $n$ decreases, power decreases.
+\item In the one-sample z test, if $\sigsq$ decreases, power decreases.
+\item In the one-sample z test, if $H_0: \theta \leq 3.6$, $H_a: \theta > 3.6$, this test would be \qu{one-sided} and \qu{right-tailed}.
+\item In the one-sample z test, if $H_0: \theta \leq 3.6$, $H_a: \theta > 3.6$, $\alpha = 5\%$, $n=500$ and $\sigsq = 1.3$, power can be computed.
+%\item In the one-sample z test, if $H_0: \theta \leq 3.6$, $H_a: \theta > 3.6$, $\alpha = 5\%$ and $\sigsq = 1.3$, power approaches 100\% as $n$ increases.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+\problem\timedsection{12} We flip a fair coin 7 times and record the proportion of heads $\thetahathat$. Let $\theta$ denote the probability of flipping heads. Below is a table of the PMF of the $\binomial{7}{0.5}$ rounded to three digits.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|cccccccc} %round(dbinom(0:7,7,0.5), 3)
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+$p(x)$ & 0.008 & 0.055 & 0.164 & 0.273 & 0.273 & 0.164 & 0.055 & 0.008
+\end{tabular}
+\end{table}
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13} 
+
+\begin{enumerate}[(a)]
+\item The sample size is $n=7$.\\
+
+Assume for the following questions that we are trying to prove that the coin is unfair.
+\item $H_0: \theta = 0.5$
+\item The size 5\% is not attainable for our test scenario.
+\item If the level was 1\%, the rejection region for $\thetahathat$ would be $\braces{0, 1}$.
+\item If the level was 7.5\%, the rejection region for $\thetahathat$ would be $\braces{0, \oneover{7}, \frac{6}{7}, 1}$.
+\item If the level was 5\%, and $\thetahathat  = 4/7$, the null hypothesis would be retained.
+\item The test in (f) is called a \qu{Binomial Exact Test}.\\
+
+Assume for the following questions that we are trying to prove that the coin is biased towards heads.
+\item $H_0: \theta = 0.5$
+\item If the level was 5\%, the rejection region for $\thetahathat$ would be $\braces{0, \oneover{7}, \frac{6}{7}, 1}$.
+\item If the level was 5\%, and $\thetahathat  = 4/7$, the null hypothesis would be retained.
+\item If the level was 5\%, and $\thetahathat  = 4/7$, Fisher's $p$-val would be 22.7\%.
+\item If the level was 1\%, and $\thetahathat  = 5/7$, Fisher's $p$-val would be larger than Fisher's $p$-val when $\thetahathat  = 4/7$.
+\item If the level was 1\%, and $\thetahathat  = 5/7$, you have enough information to compute power of this test.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+
+
+%set.seed(1)
+%x = round(rnorm(7, 27, 2), 1)
+%sum((x - mean(x))^2) / length(x)
+%(27.1 - 29) / (sd(x) / sqrt(7))
+%(27.1 - 29) / (sqrt(7/6*2.71) / sqrt(7))
+\problem\timedsection{13} We suspect that pollution in a certain river is affecting the nutrition for a Atlantic Salmon and thereby making their adult size less than what is historically expected for salmon. Salmon are known to have mean length 29in with standard deviation 0.95in and for the distribution to be normal. However, we are not sure what the standard deviation for malnourished salmon will be. We collect the following lengths of salmon from the river: $\bv{x} = \angbraces{25.7, 27.4, 25.3, 30.2, 27.7, 25.4, 28.0}$ where $\xbar = 27.1$ and $\hat{\sigma}^2 = 2.71$. We would like to prove that $\theta$, the length of fish from the polluted river, are smaller than regular salmon via a 1-sample t-test. Below is a table of CDF values for the T distribution for many different degrees of freedom (df):
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|ccccccc} %round(dbinom(0:7,7,0.5), 3)
+df & 0.1\% & 0.5\% & 1\% & 5\% & 10\% & 15\% & 20\% \\ \hline
+6 & -5.21 & -3.71 & -3.14 &-1.94 &-1.44 &-1.13 &-0.91 \\
+7 & -4.79 & -3.50 &-3.00 &-1.89 &-1.41 &-1.12 &-0.90 \\
+8 & -4.50 & -3.36 &-2.90 &-1.86 &-1.40 &-1.11 &-0.89 \\
+\end{tabular}
+\end{table}
+
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{11} 
+
+\begin{enumerate}[(a)]
+\item The value $\xbar = 27.1$ is a estimate realized from an unbiased estimator.
+\item The value $\hat{\sigma}^2 = 2.71$ is a estimate realized from an unbiased estimator.
+\item The reason why we use a 1-sample t-test is because we know $\sigma = 0.95$.
+\item The value of $\xbar$ standardized is -1.855 rounded to the nearest 3 decimals.
+\item The value of $\xbar$ standardized is -2.827 rounded to the nearest 3 decimals.
+\item The value of $\xbar$ standardized is -3.298 rounded to the nearest 3 decimals.
+\item The value of $\xbar$ standardized is -3.054 rounded to the nearest 3 decimals.
+\item The null hypothesis is rejected at $\alpha = 1\%$.
+\item The null hypothesis is rejected at $\alpha = 5\%$.
+\item Fisher's $p$-val for this test is likely closest to 1\% among all the options in the table of CDF values for the T distribution.
+\item Fisher's $p$-val for this test is likely closest to 5\% among all the options in the table of CDF values for the T distribution.
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+\problem\timedsection{14} Chevalier de Mere was a French nobleman writer / philosopher who lived from 1607-1684. But he is far better known for his contribution to probability theory likely due to his compulsive gambling habit. Before notions of probabilitistic independence, complement rule, random variable theory (all the familiar 241 topics) were discovered, he wrote a letter to Blaise Pascal where he accurately conjectured that the probability of winning a certain dice game. In this dice game, you \qu{win} if you get at least one double 6 in a roll of two dice among 24 rolls of two dice. He conjectured that the probability of winning was less than 50\% and the actual probability is $\theta = 49.14\%$. Assuming each of these entire 24 rolls defines one game and he plays many games, then the DGP for winning of each game truly is $\iid \bernoulli{0.4914}$. Assuming he kept a flawless mental record of wins and losses, how many games would he need to observe to reject the null hypothesis that $\theta \geq 50\%$ at $\alpha = 5\%$ with power of 80\%? The two CDF values for the standard normal distribution that are needed are: $\Phi(-1.645)  = 5\%$ and $\Phi(0.84)  = 80\%$. 
+
+\vspace{-0.2cm}\benum\multchoicewithpoints{12}{Select the answer choice below whose number is \emph{closest} to your answer.}
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item 1,000
+\item 5,000
+\item 7,500
+\item 10,000
+\item 15,000
+\item 20,000
+\item 30,000
+\item 40,000
+\item 50,000
+\item 75,000
+\item 100,000
+\item 200,000
+
+\end{enumerate}
+\end{multicols}
+\eenum\instr\pagebreak
+
+\end{document}
+
