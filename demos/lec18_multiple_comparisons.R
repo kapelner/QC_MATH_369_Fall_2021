@@ -2,7 +2,15 @@ m = 100
 #assume all nulls are true => pvals are realizations from iid standard uniform
 set.seed(9)
 ps = runif(m)
+#Let some be real!
+ps[1] = .0010
+ps[2] = .0011
+ps[3] = .0012
+ps[4] = .0013
+ps[5] = .0014
 ps
+
+#set my familywise error rate
 FWER_0 = 0.05
 
 #Naive procedure. Let alpha = FWER_0.
@@ -14,6 +22,7 @@ length(tests_rejected_naively)
 
 #Bonferroni procedure. Set FWER = alpha above and adjust the per-test alpha
 alpha_bonferroni = FWER_0 / m
+alpha_bonferroni
 tests_rejected_bonferroni = which(ps < alpha_bonferroni)
 length(tests_rejected_bonferroni)
 ps_bonferroni_adj = ps * FWER_0 / alpha_bonferroni
@@ -21,6 +30,7 @@ sort(ps_bonferroni_adj)
 
 #Sidak procedure. Adjust the per-test alpha
 alpha_sidak = 1 - (1 - FWER_0)^(1 / m)
+alpha_sidak
 tests_rejected_sidak = which(ps < alpha_sidak)
 length(tests_rejected_sidak)
 ps_sidak_adj = ps * FWER_0 / alpha_sidak
@@ -32,8 +42,10 @@ ps_sorted = ps[sorted_idx]
 ps_sorted
 alpha_stepped_up_thresholds = FWER_0 * (1 : m) / m 
 alpha_stepped_up_thresholds
-which(ps_sorted < alpha_stepped_up_thresholds)
-a_star = 0
+p_indicies_smaller_than_thresholds = which(ps_sorted < alpha_stepped_up_thresholds)
+p_indicies_smaller_than_thresholds
+a_star = max(p_indicies_smaller_than_thresholds)
+a_star
 
 pacman::p_load(ggplot2)
 ggplot(data.frame(test_number = 1 : m, ordered_pvals = ps_sorted, alpha_stepped_up_thresholds = alpha_stepped_up_thresholds)) + 
@@ -42,8 +54,9 @@ ggplot(data.frame(test_number = 1 : m, ordered_pvals = ps_sorted, alpha_stepped_
   geom_hline(yintercept = FWER_0, col = "red") +
   geom_hline(yintercept = alpha_bonferroni, col = "yellow") +
   geom_hline(yintercept = alpha_sidak, col = "gray") +
+  geom_line(aes(x = test_number, y = alpha_stepped_up_thresholds), col = "green") +
   geom_point(aes(x = test_number, y = alpha_stepped_up_thresholds), col = "green")
-  
+
 
 
 pacman::p_load(data.table, ggplot2)

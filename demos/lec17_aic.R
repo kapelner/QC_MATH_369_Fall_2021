@@ -49,9 +49,13 @@ round(akaike_weights * 100, 2)
 #now compute the AICc's
 k = 2 #it's the same for all models
 aiccs = aic_s_sorted - 2 * k + 2 * k * n / (n-k-1)
-aiccs
-sort(aiccs)
-aic_s_sorted
+aicc_s_sorted = sort(aiccs)
+aicc_s_sorted
+
+best_aicc = aicc_s_sorted[1]
+delta_aiccs = aicc_s_sorted - best_aicc
+akaike_weights = exp(-delta_aiccs / 2) / sum(exp(-delta_aiccs / 2))
+round(akaike_weights * 100, 2)
 #doesn't make any difference in the rankings
 
 
