@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 369/650 Fall \the\year{} Homework \#6}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{NOT DUE but covered on the final exam \\\vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the class topics: the 1-sample and 2-sample Kolmogorov-Smirnov test, the two-sample permutation test, the nonparametric bootstrap (its use in hypothesis testing and confidence interval construction), \color{gray}causal estimates, bias in observational study estimates, counfounding variables, two-arm randomized experiments for testing treatment vs. control, and their unbiasedness \color{black} in the two recommended textbooks and online.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. \qu{[MA]} are for those registered for the 600 section and extra credit otherwise.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 7 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+
+\problem{Consider height data from 2020's MATH 369 class. We sample $n_1 = 10$ men and measured heights in inches: 67, 68, 69, 70, 70, 71, 72, 72, 73 and 73 and $n_2 = 6$ females and measured heights in inches: 59, 60, 63, 64, 64 and 64.
+
+}
+
+\begin{enumerate}
+
+\easysubproblem{Over the regions of Europe, North America, Australia, and East Asia, female height is found to be normally distributed with mean 64.8in and standard deviation 2.8in (see \href{https://ourworldindata.org/human-height\#height-is-normally-distributed}{here}). We wish to test if our data deviates from this distribution. State the null and alternative hypothesis.}\spc{2}
+
+\easysubproblem{Using these mean and standard deviation values, standard the data for the $n_2$ female height measurements and provide the values of $z_1, ..., z_6$ below.}\spc{2}
+
+\easysubproblem{In the following space create an illustration that plots the empirical CDF of the standardized female heights. Also on this plot, graph $F_Z(z)$, the CDF of $\normnot{0}{1}$.You will have to look up the quantiles for the standard normal from Math 241. Try to make your illustration to scale as much as possible but zoom in on the y axis more than the x axis. Make the y axis as high as the space below and have y range from 0 to 1.}\spc{8}
+
+\easysubproblem{From the plot in (c), try to estimate $D_6$, the \qu{supremum norm difference} which is
+the largest absolute difference between the empirical CDF and $F_Z(z)$.}\spc{-0.5}
+
+\easysubproblem{In the statement $\sqrt{n}D_n \convd K$, what is the name of the distribution $K$? And who proved this result? Plot a rough sketch below of the PDF of $K$. Label the axes.}\spc{3}
+
+\easysubproblem{Run the one-sample Kolmogorov-Smirnov (K-S) test for the $H_a$ in (a) using the test statistic in (d) at $\alpha = 5\%$. Note that $F_K(1.359) = 95\%$. What is your decision?}\spc{1}
+
+
+\easysubproblem{We now wish to test if the DGP's for male and female height are different. State the null and alternative hypothesis.}\spc{1}
+
+\intermediatesubproblem{In the following space create an illustration that plots the empirical CDF of the raw female heights (not standardized). Also on this illustration, plot the empirical CDF of the raw male heights (not standardized). Try to make your illustration to scale as much as possible but zoom in on the y axis more than the x axis. Make the y axis as high as the space below and have y range from 0 to 1.}\spc{7}
+
+\easysubproblem{From the plot in (g), try to estimate $D_{6,10}$, the two-sample \qu{supremum norm difference} which is the largest absolute difference between the two empirical CDFs.}\spc{-.5}
+
+\easysubproblem{Run the two-sample K-S test for the $H_a$ in (g) using the test statistic in (i) at $\alpha = 5\%$. Note that $F_K(1.359) = 95\%$. What is your decision?}\spc{2}
+
+\intermediatesubproblem{Is the quantile in the cases in (f) and (j) accurate given our sample size? To run these two K-S tests more accurately, what can you do?}\spc{1}
+
+\easysubproblem{We now wish to run Fisher's permutation test to test $H_a$ in (g). Explain the steps of the permutation test carefully. Provide the four examples from the lecture of test statistics that can be employed.}\spc{8}
+
+
+\hardsubproblem{Provide an examples of a test statistic that can be employed within the permutation test that we did not discuss in class. Explain why it would work.}\spc{2}
+
+\easysubproblem{In this dataset, what is $B_{all}$, i.e. how many possible unique resamplings are there? Can these number of resamplings be done comfortably in a modern computer?}\spc{1}
+
+\easysubproblem{Let's employ the ratio-of-averages test statistic (even though we used difference-of-averages in class). Under $H_0$ in (g), what do you expect the value of the ratio-of-averages to be?}\spc{1}
+
+\hardsubproblem{Prove that the true mean over all resamplings is indeed the answer from (o).}\spc{7}
+
+
+\easysubproblem{Calculate the ratio-of-averages test statistic for the original data.}\spc{1}
+
+\easysubproblem{Do one resampling of the data manually by hand (make sure you split all $n$ into partitions of sizes $n_1$ and $n_2$). Write the resampled data below. Calculate the ratio-of-averages test statistic.}\spc{7}
+
+
+\easysubproblem{Below is an histogram of all $B$ resamplings. The value of the ratio of averages in the original sample data is displayed as a green vertical line.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5in]{height_ratios}
+\end{figure}
+
+Estimate the RET at $\alpha = 5\%$. Run the test and report your decision. }\spc{1}
+
+
+\intermediatesubproblem{Estimate Fisher's p-value for this test.}\spc{1}
+
+
+\end{enumerate}
+
+
+\problem{In midterm I, problem 10 we looked at lifespans data rats. Mesured in years, here were the lifespans of each rat, sorted: 0.87, 1.04, 1.09, 1.33, 1.39, 1.47, 1.54, 1.69, 1.94, 2.23, 2.28, 2.44, 2.48, 2.49, 2.52, 2.57, 2.64, 2.71, 2.8, 3.08, 3.08, 3.18, 3.22, 3.28, 3.4, 3.65, 3.86, 3.96, 4.18, 4.80. }
+
+
+
+
+\begin{enumerate}
+
+
+\easysubproblem{For the $n=30$ rats, $\xbar = 2.57$ and $s = 1.00$. Create an approximate 95\% CI for the mean lifespan of these rats by inverting the Wald test.}\spc{0.5}
+
+\easysubproblem{For the $n=30$ rats, calculate the sample median.}\spc{0}
+
+\easysubproblem{The CI in (a) relied upon using the CLT and an application of the continuous mapping theorem and Slutsky's theorem. If we interested in a 95\% CI for the \emph{median}, could we rely on the same theory? Yes / no.}\spc{-0.5}
+
+
+\easysubproblem{Consider a nonparametric bootstrap of this data. Could this yield approximate inference (i.e. testing hypotheses and constructing confidence intervals) for the sample median? Yes / no.}\spc{-0.5}
+
+\hardsubproblem{How large is $B_{all}$, the total number of unique resamplings of this dataset during the nonparametric bootstrap procedure?}\spc{1}
+
+\intermediatesubproblem{Below is a histogram of the boostrap distribution of the sample median for $B=100,000$. The value of the sample median is displayed as a green vertical line.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5in]{medians}
+\end{figure}
+
+Why does the bootstrap distribution appear discrete? Is the actual estimator's distribution discrete?}\spc{2}
+
+\easysubproblem{Provide an approximate 95\% CI for the median lifespan of these rats by estimating it from the picture above.}\spc{0.5}
+
+\easysubproblem{Do an approximate test of the median rat lifespan being greater than two years. State the hypotheses first and justify your answer.}\spc{3}
+
+\end{enumerate}
+
+\end{document}
