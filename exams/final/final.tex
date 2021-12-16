@@ -1,0 +1,353 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt,landscape]{article}
+
+\usepackage[normalem]{ulem}
+\include{preamble}
+
+\newcommand{\instr}{\small Your answer will consist of a lowercase string (e.g. \texttt{aebgd}) where the order of the letters does not matter. \normalsize}
+
+\title{Math 369 / 690 Fall \the\year{} \\ Final Examination}
+\author{Professor Adam Kapelner}
+
+\date{Thursday, December 16, \the\year{}}
+
+\begin{document}
+\maketitle
+
+%\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using an unauthorized cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent By taking this exam, you acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+%\begin{center}
+%\line(1,0){250} ~~~ \line(1,0){100}\\
+%~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+%\end{center}
+
+\normalsize
+\vspace{-0.3cm}
+\section*{Instructions}
+This exam is 110 minutes (variable time per question) and closed-book. You are allowed \textbf{three} page (front and back) of a \qu{cheat sheet}, blank scrap paper and a graphing calculator. Please read the questions carefully. I recommend answering all questions that are easy first and then circling back to work on the harder ones. \ingray{Gray text} means the text is repeated verbatim from a previous problem. No food is allowed, only drinks. %If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{13} \href{https://en.wikipedia.org/wiki/Benford\%27s_law}{Benford's law} discovered in 1938 a discrete parameterless probability distribution on the first digits of numbers. It is also called the \qu{first-digit law} and was discovered by examining real-world datasets. In real-world datasets, numbers beginning with a 1 are about twice as likely as numbers beginning with a 2. Numbers beginning with a 2 are about 50\% more likely that numbers beginning with a 3, etc. This is especially true in domains such as accounting and taxes. This distribution is used frequently to prove that a dataset is fraudulent i.e. if someone is trying to cheat on their taxes by randomly generating numeric values, their values will not follow Benford's law since most crooks aren't too careful about learning probability theory. Below is the Benford Law distribution's PMF and CDF. It's mean is 3.441.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|lllllllll}
+$x$		&	1		& 	2		&	3		&	4		&	5		&	6		&	7		&		8	&	9 \\ \hline
+$p(x)$	&	.301	&	.176	&	.125	&	.097	&	.079	&	.067	&	.058	& 		.051	&	.046 \\
+$F(x)$  &   .301		&	.477	&	.602	&	.699	&	.778	&	.845	&	.903	& 		.954	&	1.000 \\
+\end{tabular}
+\end{table}
+\FloatBarrier
+\vspace{-0.2cm}
+\noindent Consider a tax return with $n=45$ numbers. We examine the first digit of the numbers and sort the data. It turns out the first digit is exactly uniformly distributed across all digits i.e. $\x = <1,1,1,1,1,2,2,2,2,2, \ldots, 9,9,9,9,9>$.  This smells of fraud; we will investigate. To test cheating we can use ...
+
+\vspace{-0.1cm}\benum\truefalsesubquestionwithpoints{13} 
+\begin{enumerate}[(a)]
+\item ... the one sample asymptotic $z$ test for the mean
+\item ... the one sample asymptotic $t$ test for the mean
+\item ... the one sample Wald test for the mean
+\item ... the score test for the mean
+\item ... the likelihood ratio test for the mean
+\item ... a generalized likelihood ratio test
+\item ... Pearson's $\chi^2$ goodness of fit test
+\item ... Kolmogorov-Smirnov's one-sample test
+\item ... a bootstrap test where $\xbar$ is calculated for each bootstrap sample
+\item ... the Welch-Satterthwaite $t$ test
+\item ... Kolmogorov-Smirnov's two-sample test
+\item ... Fisher's two-sample permutation test
+\item ... the multivariate delta method
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{14} \ingray{\small{\href{https://en.wikipedia.org/wiki/Benford\%27s_law}{Benford's law} discovered in 1938 a discrete parameterless probability distribution on the first digits of numbers. It is also called the \qu{first-digit law} and was discovered by examining real-world datasets. In real-world datasets, numbers beginning with a 1 are about twice as likely as numbers beginning with a 2. Numbers beginning with a 2 are about 50\% more likely that numbers beginning with a 3, etc. This is especially true in domains such as accounting and taxes. This distribution is used frequently to prove that a dataset is fraudulent i.e. if someone is trying to cheat on their taxes by randomly generating numeric values, their values will not follow Benford's law since most crooks aren't too careful about learning probability theory. Below is the distribution's PMF and CDF. It's mean is 3.441.} \normalsize
+
+
+\vspace{-0.2cm}
+\begin{table}[h]
+\centering\ingray{
+\begin{tabular}{l|lllllllll}
+
+$x$		&	1		& 	2		&	3		&	4		&	5		&	6		&	7		&		8	&	9 \\ \hline
+$p(x)$	&	.301	&	.176	&	.125	&	.097	&	.079	&	.067	&	.058	& 		.051	&	.046 \\
+$F(x)$  &   .301		&	.477	&	.602	&	.699	&	.778	&	.845	&	.903	& 		.954	&	1.000 \\
+\end{tabular}}
+\end{table}
+\FloatBarrier
+
+\vspace{-0.3cm}
+\noindent Consider a tax return with $n=45$ numbers. We examine the first digit of the numbers and sort the data. It turns out the first digit is exactly uniformly distributed across all digits i.e. $\x = <1,1,1,1,1,2,2,2,2,2, \ldots, 9,9,9,9,9>$. This smells of fraud; we will investigate.} To do so, we will employ Pearson's $\chi^2$ goodness of fit test at $\alpha = 5\%$. Critical values you may need to reference are: $F_{\chisq{7}}(14.1) = F_{\chisq{8}}(15.5) = F_{\chisq{9}}(16.9) = F_{\chisq{10}}(18.3) = .95$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12} 
+\begin{enumerate}[(a)]
+\item $H_0: \theta = 3.441$ where $\theta$ denotes the mean of the DGP that generated $x_1, \ldots, x_{45}$
+\item $H_0:$ the DGP that generated $x_1, \ldots, x_{45}$ is Benford's law
+\item $H_0:$ the PMF of the DGP that generated $x_1, \ldots, x_{45}$ is the $p(x)$ given as $p(x)$ in the table above
+%\item $H_0:$ the CDF of the DGP that generated $x_1, \ldots, x_{45}$ is the $p(x)$ given as $F(x)$ in the table above
+\item Pearson's $\chi^2$ goodness of fit test statistic is a realization from an approximate $\chisq{7}$ distribution
+\item Pearson's $\chi^2$ goodness of fit test statistic is a realization from an approximate $\chisq{9}$ distribution
+
+\item Pearson's $\chi^2$ goodness of fit test statistic is 0
+\item Pearson's $\chi^2$ goodness of fit test statistic is 18.05 rounded to the nearest two digits
+\item Pearson's $\chi^2$ goodness of fit test statistic is 18.39 rounded to the nearest two digits
+\item Pearson's $\chi^2$ goodness of fit test statistic is 213.01 rounded to the nearest two digits
+%\item Pearson's $\chi^2$ goodness of fit test statistic is 4888.37 rounded to the nearest two digits
+\item Pearson's $\chi^2$ goodness of fit test statistic cannot be computed given the information available
+
+\item $H_0$ is rejected
+\item There is sufficient evidence to conclude this person is cheating on their tax return
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{13} \ingray{\footnotesize{\href{https://en.wikipedia.org/wiki/Benford\%27s_law}{Benford's law} discovered in 1938 a discrete parameterless probability distribution on the first digits of numbers. It is also called the \qu{first-digit law} and was discovered by examining real-world datasets. In real-world datasets, numbers beginning with a 1 are about twice as likely as numbers beginning with a 2. Numbers beginning with a 2 are about 50\% more likely that numbers beginning with a 3, etc. This is especially true in domains such as accounting and taxes. This distribution is used frequently to prove that a dataset is fraudulent i.e. if someone is trying to cheat on their taxes by randomly generating numeric values, their values will not follow Benford's law since most crooks aren't too careful about learning probability theory. Below is the distribution's PMF and CDF. It's mean is 3.441.} \normalsize
+
+\vspace{-0.2cm}
+\begin{table}[h]
+\centering\ingray{
+\begin{tabular}{l|lllllllll}
+
+$x$		&	1		& 	2		&	3		&	4		&	5		&	6		&	7		&		8	&	9 \\ \hline
+$p(x)$	&	.301	&	.176	&	.125	&	.097	&	.079	&	.067	&	.058	& 		.051	&	.046 \\
+$F(x)$  &   .301		&	.477	&	.602	&	.699	&	.778	&	.845	&	.903	& 		.954	&	1.000 \\
+\end{tabular}}
+\end{table}
+\FloatBarrier
+
+\vspace{-0.2cm}
+\noindent Consider a tax return with $n=45$ numbers. We examine the first digit of the numbers and sort the data. It turns out the first digit is exactly uniformly distributed across all digits i.e. $\x = <1,1,1,1,1,2,2,2,2,2, \ldots, 9,9,9,9,9>$. This smells of fraud; we will investigate.} To do so, we will employ the Kolmogorov-Smirnov (KS) test at $\alpha = 5\%$ (and assume it works for discrete rv's). The critical value you need for reference is: $F_{K}(1.36) = .95$ where $K$ denotes the Kolmogorov distribution.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{12} 
+\begin{enumerate}[(a)]
+\item $H_0: \theta = 3.441$ where $\theta$ denotes the mean of the DGP that generated $x_1, \ldots, x_{45}$
+\item $H_0:$ the DGP that generated $x_1, \ldots, x_{45}$ is Benford's law
+%\item $H_0:$ the PMF of the DGP that generated $x_1, \ldots, x_{45}$ is the $p(x)$ given as $p(x)$ in the table above
+%\item $H_0:$ the CDF of the DGP that generated $x_1, \ldots, x_{45}$ is the $p(x)$ given as $F(x)$ in the table above
+\item The KS test is an approximate test
+
+\item The $\doublehat{D}_n$ test statistic is 0 
+\item The $\doublehat{D}_n$ test statistic is 0.19 rounded to the nearest two digits 
+\item The $\doublehat{D}_n$ test statistic is 0.25 rounded to the nearest two digits
+\item The $\doublehat{D}_n$ test statistic is 0.27 rounded to the nearest two digits
+\item The $\doublehat{D}_n$ test statistic cannot be computed given the information available
+
+\item If $\doublehat{D}_n < 1.36$, this means the null hypothesis is retained
+\item There is sufficient evidence to conclude this person is cheating on their tax return
+\item the KS test statistic should be approximately equal to Pearson's $\chi^2$ goodness of fit test statistic
+\item Fisher's p-value in the KS test should be approximately equal to Fisher's p-value in Pearson's $\chi^2$ goodness of fit test
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{14} \ingray{\footnotesize{\href{https://en.wikipedia.org/wiki/Benford\%27s_law}{Benford's law} discovered in 1938 a discrete parameterless probability distribution on the first digits of numbers. It is also called the \qu{first-digit law} and was discovered by examining real-world datasets. In real-world datasets, numbers beginning with a 1 are about twice as likely as numbers beginning with a 2. Numbers beginning with a 2 are about 50\% more likely that numbers beginning with a 3, etc. This is especially true in domains such as accounting and taxes. This distribution is used frequently to prove that a dataset is fraudulent i.e. if someone is trying to cheat on their taxes by randomly generating numeric values, their values will not follow Benford's law since most crooks aren't too careful about learning probability theory. Below is the distribution's PMF and CDF. It's mean is 3.441.
+
+\vspace{-0.2cm}
+\begin{table}[h]
+\centering\ingray{
+\begin{tabular}{l|lllllllll}
+
+$x$		&	1		& 	2		&	3		&	4		&	5		&	6		&	7		&		8	&	9 \\ \hline
+$p(x)$	&	.301	&	.176	&	.125	&	.097	&	.079	&	.067	&	.058	& 		.051	&	.046 \\
+$F(x)$  &   .301		&	.477	&	.602	&	.699	&	.778	&	.845	&	.903	& 		.954	&	1.000 \\
+\end{tabular}}
+\end{table}
+\FloatBarrier
+
+\vspace{-0.2cm}
+\noindent Consider a tax return with $n=45$ numbers. We examine the first digit of the numbers and sort the data. It turns out the first digit is exactly uniformly distributed across all digits i.e. $\x = <1,1,1,1,1,2,2,2,2,2, \ldots, 9,9,9,9,9>$. This smells of fraud; we will investigate.}} \normalsize To do so, we will employ the generalized likelihood ratio test at $\alpha = 5\%$. Critical values you may need to reference are: $F_{\chisq{7}}(14.1) = F_{\chisq{8}}(15.5) = F_{\chisq{9}}(16.9) = F_{\chisq{10}}(18.3) = .95$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13} 
+\begin{enumerate}[(a)]
+\item $H_0: \theta = 3.441$ where $\theta$ denotes the mean of the DGP that generated $x_1, \ldots, x_{45}$
+\item $H_0:$ the DGP that generated $x_1, \ldots, x_{45}$ is Benford's law
+
+%\item The $\doublehat{\Lambda}$ test statistic is a realization from an approximate $\chisq{7}$ distribution
+\item The $\doublehat{\Lambda}$  test statistic is a realization from an approximate $\chisq{9}$ distribution
+
+\item The generalized likelihood ratio test is an approximate test
+\item The numerator in the likelihood ratio is $1/9^{45}$
+\item The denominator in the likelihood ratio is $1/9^{45}$
+\item The likelihood that this data came from Benford's law is less than 1 in 1,000,000,000
+\item The $\doublehat{\Lambda}$ test statistic is 0 
+\item The $\doublehat{\Lambda}$ test statistic is 2.12 $\times 10^{-47}$ rounded to the nearest two digits
+\item The $\doublehat{\Lambda}$ test statistic is 8.59 rounded to the nearest two digits
+\item The $\doublehat{\Lambda}$ test statistic cannot be computed given the information available
+
+\item If the likelihood ratio is calculated to be a value strictly greater than 1, the null hypothesis is rejected
+\item There is sufficient evidence to conclude this person is cheating on their tax return
+
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem\timedsection{13} Below is the PMF and log PMF of Benford's law distribution:
+
+\vspace{-0.2cm}
+\begin{table}[h]
+\centering
+\begin{tabular}{l|lllllllll}
+
+$x$		&	1		& 	2		&	3		&	4		&	5		&	6		&	7		&		8	&	9 \\ \hline
+$p(x)$	&	.301	&	.176	&	.125	&	.097	&	.079	&	.067	&	.058	& 		.051	&	.046 \\
+$\natlog{p(x)}$  &   -1.201 & -1.737 & -2.079 & -2.333 & -2.538 & -2.703 & -2.847 & -2.976 & -3.079 \\
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+\vspace{-0.2cm}
+\noindent \ingray{Consider a tax return with $n=45$ numbers. We examine the first digit of the numbers and sort the data. It turns out the first digit is exactly uniformly distributed across all digits i.e. $\x = <1,1,1,1,1,2,2,2,2,2, \ldots, 9,9,9,9,9>$. This smells of fraud; we will investigate.} \normalsize This time, we will use model selection even though this is not, strictly speaking, a form of hypothesis testing. Consider two models:
+
+\begin{itemize}
+\item[I] Uniform i.e. with likelihood $\tothepow{\oneover{9}}{5} \tothepow{\oneover{9}}{5} \cdot \ldots \cdot \tothepow{\oneover{9}}{5}$
+\item[II] Benford i.e. with likelihood $\tothepow{0.301}{5} \tothepow{0.176}{5} \cdot \ldots \cdot \tothepow{0.046}{5}$
+\end{itemize}
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{16} 
+\begin{enumerate}[(a)]
+\item The log-likelihood in the first model is -98.88 rounded to the nearest two digits
+\item The log-likelihood in the second model is -107.47 rounded to the nearest two digits
+\item Since the log-likelihood in the second model is absolutely larger than the first model, the second model is more likely to be true if you assume one of the two models is true
+
+\item The AIC for Model I is 197.75 rounded to the nearest two digits
+\item The AIC for Model I is 199.75 rounded to the nearest two digits
+
+\item Since Model I has the lower AIC, model I is the selected model according to the AIC model selection procedure
+
+\item Assuming one of these two models is the true model, the probability that model I is true is 50\%
+\item Assuming one of these two models is the true model, the probability that model I is true is 99.98\% rounded to the nearest two digits
+
+\item For Model II, the AIC and the AICC metrics will be equivalent
+\end{enumerate}
+\eenum\instr\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{11} Consider running $m > 1$ hypothesis tests. Following the notation from the lectures, below is a table that tabulates the random variables that model the possible events (denoted by uppercase letters) and the fixed constants (denoted by lowercase letters) in the course of these tests:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|cc|c}
+& Decision: Retain $H_0$ & Decision: Reject $H_0$ & total \\\hline
+$H_0$ true & $U$ & $V$ & $m_0$ \\
+$H_a$ true & $T$ & $S$ & $m - m_0$ \\ \hline
+total & $F$ & $R$ & $m$
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+Assume each of the $m$ tests are \textbf{independent from each other} and that the levels for each test are $\alpha$.
+
+\vspace{-0.2cm}\benum\truefalsesubquestionwithpoints{13} 
+
+\begin{enumerate}[(a)]
+\item $U \sim \binomial{m}{\alpha}$ 
+\item $U \sim \binomial{m}{1 - \alpha}$ 
+\item For any $m -m_0$ alternative distributions, $S$ can be modeled as a binomial
+\item $T$ is the rv model which models the number of type II errors
+\item If the FWER is properly controlled, $T$ goes to zero as $m \rightarrow \infty$
+\item If the FWER is properly controlled, the rejected tests's results are of higher practical significance then the rejected tests's results without FWER control (but still may not be practically significant)
+\item The familywise error rate (FWER) is equal to the probability that $R > 1$
+\item Using the Dunn-Sidak correction, the threshold for significance of each test would be less than $\alpha$
+\item The Simes procedure has a higher $\expe{R}$ than the Bonferroni procedure
+
+\item If you set $\alpha = 5\% / m$ then FWER $=5\%$
+\item If you set $\alpha = 5\% / m$ then FWER $> 5\%$
+
+\item In order to compute the threshold of significance for Sime's FWER-controlling procedure, you need to first run all $m$ tests and compute their $m$ p-values
+\item For $m_0$ of the $m$ tests, the p-values could be drawn as realizations from $\stduniform$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{9} A not-so well-known test is a test for a DGP's \qu{kurtosis}. Kurtosis is generally speaking a measure of how fast the tails of the distribution approach zero. Pearson defined it to be $\kappa := \expe{(X - \mu)^4 / \sigma^4}$, the fourth standardized moment. A very interesting fact is that the normal distribution has $\kappa = 3$ regardless of its mean and variance. Thus, we define the \qu{excess kurtosis} as the amount in excess over 3, i.e. $\kappa_0 := \kappa - 3$. An excess kurtosis of different than 0 means the tails of the distribution are thinner/fatter than the normal's tails. This is really important to test sometimes.
+
+
+\vspace{-0.1cm}
+\benum\truefalsesubquestionwithpoints{8} 
+\begin{enumerate}[(a)]
+\item To test this we can use a one sample Wald test if we were given the DGP and can derive the MLE for $\kappa_0$
+\item To test $H_a: \kappa_0 \neq 0$ we can use Pearson's $\chi^2$ goodness of fit test
+\item To test $H_a: \kappa_0 \neq 0$ we can use Kolmogorov-Smirnov's one-sample test
+\item To test $H_a: \kappa_0 \neq 0$ we can use Fisher's two-sample permutation test
+\item To test $H_a: \kappa_0 \neq 0$ we can use the multivariate delta method
+\item We can always estimate $\kappa_0$ using MM for any DGP whose $\kappa_0$ is finite
+\item To test $H_a: \kappa_0 \neq 0$ we can use a one sample Wald test if we can derive the standard error for the MM $\kappa_0$ estimator
+\item To test $H_a: \kappa_0 \neq 0$ we can use a bootstrap test where the MM excess kurtosis estimate is calculated for each bootstrap sample
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{8} \ingray{A not-so well-known test is a test for a DGP's \qu{kurtosis}. Kurtosis is generally speaking a measure of how fast the tails of the distribution approach zero. Pearson defined it to be $\kappa := \expe{(X - \mu)^4 / \sigma^4}$, the fourth standardized moment. A very interesting fact is that the normal distribution has $\kappa = 3$ regardless of its mean and variance. Thus, we define the \qu{excess kurtosis} as the amount in excess over 3, i.e. $\kappa_0 := \kappa - 3$. An excess kurtosis of greater than 0 means the tails of the distribution are fatter than the normal's tails. This is really important to test sometimes.} Consider the following stock market data: centered daily percentage returns from the S\&P 500 in the past year. We wish to test if the tails of this distribution are fatter than the normal distribution's tails, i.e. $H_a: \kappa_0 \neq 0$ at $\alpha = 5\%$ and to do so we'll use a bootstrap test. Here is a histogram of $B=1,000,000$ MM estimates of $\kappa_0$. And $\doublehat{\kappa}^{MM}_0 = 0.748$
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{boot}
+\end{figure}
+
+
+\vspace{-0.9cm}
+\benum\truefalsesubquestionwithpoints{9} 
+\begin{enumerate}[(a)]
+\item We do not really need to use the bootstrap test as the sampling distribution of $\hat{\kappa}^{MM}_0$ can be derived analytically
+\item A 95\% bootstrap confidence interval will be approximately between -1 and 3
+\item A 95\% bootstrap confidence interval will be approximately between 0.2 and 1.4
+\item The null hypothesis is rejected
+\item The data seems to suggest the normal model is not a good model for daily percentage returns from the S\&P 500 in the past year
+\item $B=1,000,000$ seems to be sufficient to construct CI's and run hypothesis tests
+\item $\hat{\kappa}^{MM}_0$ may be biased
+\item If $\hat{\kappa}^{MM}_0$ were to be biased, the test is still valid regardless of the bias
+\item If $\hat{\kappa}^{MM}_0$ were to be biased, the bias could be fixed by increasing $n$
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\problem\timedsection{15} Assume a DGP of $\Xoneton \iid \normnot{0}{\theta}$. We wish to test $H_a: \theta \neq 1$ for the dataset 1.41, 1.44, 4.19, 5.12, 0.09, 8.62, 0.6, -8.88, 0.63, -8.57 at $\alpha = 5\%$ using the score test.
+
+\vspace{-0.1cm}
+\benum\truefalsesubquestionwithpoints{14} 
+\begin{enumerate}[(a)]
+\item The score test requires you to compute $\doublehat{\theta}^{MLE}$
+\item $\mathcal{L}\parens{\theta; \Xoneton} = \displaystyle\prod_{i=1}^n \oneoversqrt{2\pi\theta} \exp{-\oneover{2\theta} X_i^2}$
+\item $\ell\parens{\theta; \Xoneton} = \tothepow{2\pi\theta}{-n/2} \natlog{-\oneover{2\theta} X_i^2}$
+\item $\ell'\parens{\theta; \Xoneton} = -\displaystyle\frac{n}{2\pi} -\displaystyle\frac{n}{2\theta} - \oneover{2\theta} \sum_{i=1}^nX_i^2$
+\item $\ell'\parens{\theta; \Xoneton} =-\displaystyle\frac{n}{2\theta} + \oneover{2\theta^2} \sum_{i=1}^n X_i^2$
+\item $\ell''\parens{\theta; \Xoneton} = \displaystyle\frac{n}{2\theta^2} - \oneover{\theta^3} \sum_{i=1}^n X_i^2$
+\item $I(\theta) = \displaystyle\frac{n}{2\theta^2}$
+\item $I(\theta) = -\displaystyle\frac{n}{2\theta^2}$
+\item The score statistic is $\parens{-\displaystyle\frac{n}{2} + \half \sum_{i=1}^n X_i^2} \displaystyle\overn{\sqrt{2}}$
+\item The score statistic is 0
+\item The score statistic is 16.40 rounded to the two nearest digits 
+\item The score statistic is 89.98 rounded to the two nearest digits
+\item The null hypothesis is rejected
+\item The p-value of the score test will be similar to the p-values of the likelihood ratio test and the wald test but may not be exactly equal
+\end{enumerate}
+\eenum\instr\pagebreak
+
+
+\end{document}
+
+
+
+
